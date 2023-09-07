@@ -1,0 +1,43 @@
+.auth
+  width: 100vw
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  background-color: #1f2229
+  position: relative
+  overflow: hidden
+  &:after
+    content: ""
+    background: #3fcbff
+    position: absolute
+    height: 200vh
+    top: 0
+    transform: skewY(-45deg) translate(0, 50vh)
+    width: 100vw
+
+
+  &__logo
+    margin-bottom: 36px
+    display: flex
+    justify-content: center
+    position: absolute
+    left: 0
+    top: 0
+    padding: 36px
+
+  &__form
+    padding: 36px
+    width: 100%
+    gap: 18px
+    max-width: 320px
+    display: flex
+    flex-direction: column
+    position: relative
+    z-index: 2
+    background-color: #FFFFFF
+    transition: .1s opacity
+
+    &.hide
+      opacity: 0
