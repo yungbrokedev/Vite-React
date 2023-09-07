@@ -1,0 +1,36 @@
+replicaCount: 2
+
+image:
+  repository: digitalintranet/di-training
+  pullPolicy: IfNotPresent
+  tag: latest
+
+imagePullSecrets:
+  - name: regcred
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  name: di-admin
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  path: /admin
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  host: []
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256M
+
+nodeSelector:
+  di/app-role: magnolia
+
+tolerations: [ ]
+
+affinity: { }
